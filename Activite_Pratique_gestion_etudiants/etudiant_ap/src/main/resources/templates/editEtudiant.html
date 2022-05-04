@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      layout:decorate="template">
+<head>
+    <meta charset="UTF-8">
+    <title>GEtude</title>
+    <link rel="stylesheet" th:href="@{/css/styleEtudiants.css}">
+    <link rel="stylesheet" th:href="@{/css/styleNewEtudiant.css}">
+    <link rel='stylesheet' href='https://code.getmdl.io/1.3.0/material.indigo-pink.min.css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <style>
+        h4{
+            font-size: 18px;
+            margin: 30px 0 6px 0;
+        }
+        .input-group{
+            margin:0 0;
+        }
+    </style>
+</head>
+<body>
+
+<div layout:fragment="content">
+    <div class="mdl-card mdl-card-mediakit mdl-shadow--8dp" style="margin-top: 90px; width: 1000px">
+        <div class="mdl-card__title" style="height: 60px">
+                <h2 class="mdl-card__title-text" style="margin-bottom: 0">ID :  <b th:text="${etudiantEdit.id}" style="padding-left: 30px"></b></h2>
+        </div>
+        <div class="container" style="margin: 20px 50px; width: 900px">
+            <form method="post" th:action="@{/admin/save(page=${page}, keyword=${keyword})}">
+                <div class="row">
+                    <div class="col-half">
+                        <h4 id="titre" style="margin-top: 0">Prénom</h4>
+                        <div class="input-group input-group-icon">
+                            <input type="text" placeholder="Prénom" name="prenom" th:value="${etudiantEdit.getPrenom()}"/>
+                            <input type="text" name="id" th:value="${etudiantEdit.id}" hidden/>
+                            <div class="input-icon"><i class="fa fa-user"></i></div>
+                            <span  class="text-warning" th:errors="${etudiantEdit.nom}"></span>
+                        </div>
+                    </div>
+                    <div class="col-half">
+                        <h4 style="margin-top: 0">Nom</h4>
+                        <div class="input-group input-group-icon">
+                            <input type="text" placeholder="Nom" name="nom" th:value="${etudiantEdit.nom}"/>
+                            <div class="input-icon"><i class="fa fa-user"></i></div>
+                            <span class="text-warning" th:errors="${etudiantEdit.nom}"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 20px">
+                    <h4>Adresse Email</h4>
+                    <div class="input-group input-group-icon">
+                        <input type="email" placeholder="Adresse Email" name="email" th:value="${etudiantEdit.email}"/>
+                        <div class="input-icon" style="margin-left: 10px"><i class="fa fa-envelope" style="margin-right: 0;"></i></div>
+                        <span class="text-warning" th:errors="${etudiantEdit.email}"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-half">
+                        <h4>Date de Naissance</h4>
+                        <div class="input-group input-group-icon">
+                            <input type="date" placeholder="2000-04-20" name="dateNaissance" th:value="${etudiantEdit.dateNaissance}"/>
+                            <div class="input-icon"><i class="fa fa-calendar-minus-o"></i></div>
+                            <span class="text-warning" th:errors="${etudiantEdit.dateNaissance}"></span>
+                        </div>
+                    </div>
+                    <div class="col-half">
+                        <h4>Genre</h4>
+                        <div class="input-group">
+                            <input id="gender-male" type="radio" name="genre" th:value="MASCULIN"/>
+                            <label for="gender-male">MASCULIN</label>
+                            <input id="gender-female" type="radio" name="genre" th:value="FEMININ" checked="true"/>
+                            <label for="gender-female">FEMININ</label>
+                            <span class="text-warning" th:errors="${etudiantEdit.genre}"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 20px">
+                    <h4>Réglé</h4>
+                    <div class="input-group">
+                        <input id="ouiRegle" type="radio" name="regle" th:value="1" checked="true"/>
+                        <label for="ouiRegle"><span><i class="fa fa-check" aria-hidden="true"></i>Oui</span></label>
+                        <input id="nonRegle" type="radio" name="regle" th:value="0"/>
+                        <label for="nonRegle"> <span><i class="fa fa-times" aria-hidden="true"></i>Non</span></label>
+                        <span class="text-warning" th:errors="${etudiantEdit.regle}"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="row">
+                        <div class="col-half">
+                            <div class="input-group">
+                                <button type="submit" class="buttonAjouter" style="margin: 40px 0 0 165px;">Modifier</button>
+                            </div>
+                        </div>
+                        <div class="col-half">
+                            <div class="input-group">
+                                <button type="button" class="buttonAnnuler" style="margin:40px 0 0 0">Annuler<a th:href="@{/user/index}" hidden></a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

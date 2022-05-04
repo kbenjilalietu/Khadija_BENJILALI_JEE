@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      layout:decorate="template">
+<head>
+    <meta charset="UTF-8">
+    <title>GEtude</title>
+    <link rel="stylesheet" th:href="@{/css/styleNewEtudiant.css}">
+</head>
+<body>
+
+<div layout:fragment="content">
+    <div class="container-new">
+        <form method="post" th:action="@{/admin/save(page=${page}, keyword=${keyword})}">
+            <div class="row">
+                <div class="col-half">
+                    <h4 id="titre">Prénom</h4>
+                    <div class="input-group input-group-icon">
+                        <input type="text" placeholder="Prénom" name="prenom" th:value="${etudiantForm.getPrenom()}"/>
+                        <div class="input-icon"><i class="fa fa-user"></i></div>
+                        <span  class="text-warning" th:errors="${etudiantForm.nom}"></span>
+                    </div>
+                </div>
+                <div class="col-half">
+                    <h4>Nom</h4>
+                    <div class="input-group input-group-icon">
+                        <input type="text" placeholder="Nom" name="nom" th:value="${etudiantForm.nom}"/>
+                        <div class="input-icon"><i class="fa fa-user"></i></div>
+                        <span class="text-warning" th:errors="${etudiantForm.nom}"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 20px">
+                <h4>Adresse Email</h4>
+                <div class="input-group input-group-icon">
+                    <input type="email" placeholder="Adresse Email" name="email" th:value="${etudiantForm.email}"/>
+                    <div class="input-icon" style="margin-left: 10px"><i class="fa fa-envelope" style="margin-right: 0;"></i></div>
+                    <span class="text-warning" th:errors="${etudiantForm.email}"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-half">
+                    <h4>Date de Naissance</h4>
+                    <div class="input-group input-group-icon">
+                        <input type="date" placeholder="2000-04-20" name="dateNaissance" th:value="${etudiantForm.dateNaissance}"/>
+                        <div class="input-icon"><i class="fa fa-calendar-minus-o"></i></div>
+                        <span class="text-warning" th:errors="${etudiantForm.dateNaissance}"></span>
+                    </div>
+                </div>
+                <div class="col-half">
+                    <h4>Genre</h4>
+                    <div class="input-group">
+                        <input id="gender-male" type="radio" name="genre" th:value="MASCULIN"/>
+                        <label for="gender-male">MASCULIN</label>
+                        <input id="gender-female" type="radio" name="genre" th:value="FEMININ" checked="true"/>
+                        <label for="gender-female">FEMININ</label>
+                        <span class="text-warning" th:errors="${etudiantForm.genre}"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 20px">
+                <h4>Réglé</h4>
+                <div class="input-group">
+                    <input id="ouiRegle" type="radio" name="regle" th:value="1" checked="true"/>
+                    <label for="ouiRegle"><span><i class="fa fa-check" aria-hidden="true"></i>Oui</span></label>
+                    <input id="nonRegle" type="radio" name="regle" th:value="0"/>
+                    <label for="nonRegle"> <span><i class="fa fa-times" aria-hidden="true"></i>Non</span></label>
+                    <span class="text-warning" th:errors="${etudiantForm.regle}"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row">
+                    <div class="col-half">
+                        <div class="input-group">
+                            <button type="submit" class="buttonAjouter" style="margin-left: 155px;">Ajouter</button>
+                        </div>
+                    </div>
+                    <div class="col-half">
+                        <div class="input-group">
+                            <button type="button" class="buttonAnnuler">Annuler<a th:href="@{/user/index}" hidden></a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
