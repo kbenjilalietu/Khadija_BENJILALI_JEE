@@ -9,5 +9,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface EtudiantRepository extends JpaRepository<Etudiant, Long> {
     Page<Etudiant> findByNomContains(String keyword, Pageable pageable);
-    Page<Etudiant> findByPrenomContains(String keyword, Pageable pageable);
 }

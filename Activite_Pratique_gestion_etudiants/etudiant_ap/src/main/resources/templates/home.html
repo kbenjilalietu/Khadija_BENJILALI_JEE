@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="template">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>GEtude</title>
@@ -11,7 +9,6 @@
 </head>
 <body>
 
-<div layout:fragment="content">
     <div class="row" id="welcome">
         <h1 class="home-title">
             <span>Bienvenue dans l'application <b>"GEtude"</b> </span>
@@ -24,7 +21,7 @@
             <a class="goHome" th:href="@{/user/index}">Aller à l'accueil</a>
         </div>
     </div>
-</div>
+
 
 </body>
 </html>

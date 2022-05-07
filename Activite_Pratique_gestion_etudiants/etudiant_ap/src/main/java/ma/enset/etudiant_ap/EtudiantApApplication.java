@@ -29,13 +29,13 @@ public class EtudiantApApplication {
     CommandLineRunner start(EtudiantRepository etudiantRepository){
         return args -> {
             etudiantRepository.save(
-                    new Etudiant(null, "BENJILALI","Khadija","khadija@gmail.com", Date.valueOf("2000-01-27"), Genre.FEMININ, true));
+                    new Etudiant(null, "BENJILALI","Khadija","khadija@gmail.com", Date.valueOf("2000-01-27"),true, Genre.FEMININ ));
             etudiantRepository.save(
-                    new Etudiant(null, "MAJOULI","Ahlam","ahlam@gmail.com", Date.valueOf("2001-02-07"), Genre.FEMININ, false));
+                    new Etudiant(null, "MAJOULI","Ahlam","ahlam@gmail.com", Date.valueOf("2001-02-07"),false, Genre.FEMININ));
             etudiantRepository.save(
-                    new Etudiant(null, "KOULAMI","Akram","akram@gmail.com", Date.valueOf("2000-04-20"), Genre.MASCULIN, true));
+                    new Etudiant(null, "KOULAMI","Akram","akram@gmail.com", Date.valueOf("2000-04-20"), true,  Genre.MASCULIN));
             etudiantRepository.save(
-                    new Etudiant(null, "DOUKALI","Mohammed","mohammed@gmail.com", Date.valueOf("2000-01-22"), Genre.MASCULIN, true));
+                    new Etudiant(null, "DOUKALI","Mohammed","mohammed@gmail.com", Date.valueOf("2000-01-22"),true, Genre.MASCULIN));
 
             etudiantRepository.findAll().forEach(e-> System.out.println("Etudiant ==> "+e.getNom()+" "+e.getPrenom()));
         };

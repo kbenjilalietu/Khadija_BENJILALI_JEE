@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste Patients</title>
+    <link rel="stylesheet" th:href="@{/css/styleHome.css}">
+    <link rel='stylesheet' href='https://code.getmdl.io/1.3.0/material.indigo-pink.min.css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="row" id="welcome">
+    <h1 class="home-title" style="margin-left: 400px; margin-right: 400px">
+        <span>Vous avez été déconnecté.</span>
+        <span>Si vous souhaitez vous reconnecter</span>
+        <span>Veuillez cliquer ci-dessous</span>
+    </h1>
+</div>
+<div class="row"></div>
+<div class="row">
+    <div class="panel">
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" class="goHome" value="SE DÉCONNECTER"/>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>

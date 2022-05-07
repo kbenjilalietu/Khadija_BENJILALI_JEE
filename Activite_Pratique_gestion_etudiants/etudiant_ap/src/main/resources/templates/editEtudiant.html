@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
     <style>
         h4{
-            font-size: 18px;
+            font-size: 20px;
             margin: 30px 0 6px 0;
         }
         .input-group{
@@ -23,8 +23,8 @@
 <body>
 
 <div layout:fragment="content">
-    <div class="mdl-card mdl-card-mediakit mdl-shadow--8dp" style="margin-top: 90px; width: 1000px">
-        <div class="mdl-card__title" style="height: 60px">
+    <div class="mdl-card mdl-card-mediakit mdl-shadow--8dp" style="margin-top: 100px; width: 1000px">
+        <div class="mdl-card__title" style="height: 65px; padding-bottom: 10px; font-size: 22px">
                 <h2 class="mdl-card__title-text" style="margin-bottom: 0">ID :  <b th:text="${etudiantEdit.id}" style="padding-left: 30px"></b></h2>
         </div>
         <div class="container" style="margin: 20px 50px; width: 900px">
@@ -76,7 +76,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row" style="margin-top: 20px">
+                <div class="row" style="margin-top: 25px">
                     <h4>Réglé</h4>
                     <div class="input-group">
                         <input id="ouiRegle" type="radio" name="regle" th:value="1" checked="true"/>
@@ -87,7 +87,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="row">
+                    <div class="row mt-3">
                         <div class="col-half">
                             <div class="input-group">
                                 <button type="submit" class="buttonAjouter" style="margin: 40px 0 0 165px;">Modifier</button>
@@ -95,7 +95,7 @@
                         </div>
                         <div class="col-half">
                             <div class="input-group">
-                                <button type="button" class="buttonAnnuler" style="margin:40px 0 0 0">Annuler<a th:href="@{/user/index}" hidden></a></button>
+                                <a th:href="@{/user/index}" class="buttonAnnuler" style="text-decoration:none; ">Annuler</a>
                             </div>
                         </div>
                     </div>

@@ -3,6 +3,8 @@ package ma.enset.etudiant_ap.web;
 import lombok.AllArgsConstructor;
 import ma.enset.etudiant_ap.entities.Etudiant;
 import ma.enset.etudiant_ap.repositories.EtudiantRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
@@ -47,7 +49,7 @@ public class EtudiantController
     @GetMapping("/admin/newEtudiant")
     public String newEtudiant(Model model)
     {
-        model.addAttribute("etudiantForm", new Etudiant());
+        model.addAttribute("etudiant", new Etudiant());
         return "newEtudiant";
     }
 
@@ -65,9 +67,7 @@ public class EtudiantController
                 return "editEtudiant";
         }
         etudiantRepository.save(etudiant);
-        model.addAttribute("page",page);
-        model.addAttribute("keyword",keyword);
-        return "redirect:/user/index?page="+page+"&keyword="+keyword;
+        return "redirect:/user/index?page="+page;
     }
 
     @GetMapping("/admin/editEtudiant")
@@ -84,4 +84,9 @@ public class EtudiantController
     public String login(){
         return "login";
    }
+
+    @GetMapping(value="/logout")
+    public String logout(){
+        return "logout";
+    }
 }

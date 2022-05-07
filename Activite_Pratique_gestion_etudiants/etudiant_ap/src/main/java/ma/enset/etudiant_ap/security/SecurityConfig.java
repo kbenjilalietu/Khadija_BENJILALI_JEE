@@ -34,8 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
     @Override
     protected void configure(HttpSecurity http) throws Exception
     {
-        http.formLogin().loginPage("/login").permitAll().and().logout()
-                .logoutUrl("/logout") .logoutSuccessUrl("/login");
+        http.formLogin().loginPage("/login").permitAll().and().logout().logoutUrl("/logout").logoutSuccessUrl("/login");
 
         http.authorizeRequests().antMatchers("/").permitAll();
         http.authorizeRequests().antMatchers("/admin/**").hasAuthority("ADMIN");
