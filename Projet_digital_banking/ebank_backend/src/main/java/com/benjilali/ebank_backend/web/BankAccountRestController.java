@@ -29,7 +29,6 @@ public class BankAccountRestController {
     private CustomerService customerService;
     private BankAccountMapper bankAccountMapper;
 
-
     @GetMapping("/accounts/{accountId}")
     @PreAuthorize("hasAuthority('USER')")
     public BankAccountDTO getBankAccount(@PathVariable("accountId") String accountId) throws BankAccountNotFoundExcetion {
@@ -99,5 +98,4 @@ public class BankAccountRestController {
     public void deleteBankAccount(@PathVariable(name = "id") String accountId ) throws BankAccountNotFoundExcetion {
          bankAccountService.deleteAccount( accountId );
     }
-
 }

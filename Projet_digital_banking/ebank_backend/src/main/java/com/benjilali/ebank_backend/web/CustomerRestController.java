@@ -83,5 +83,4 @@ public class CustomerRestController {
             throws CustomerNotFoundException {
         return customerService.getCustomerAccounts( customerId, page, size);
     }
-
 }

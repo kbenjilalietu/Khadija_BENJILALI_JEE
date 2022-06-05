@@ -16,19 +16,13 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 
-@Configuration
-@EnableWebSecurity
-@AllArgsConstructor
+@Configuration @EnableWebSecurity @AllArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
     private UserDetailsServiceImpl detailsService;
-
-
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService( detailsService );
     }
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();

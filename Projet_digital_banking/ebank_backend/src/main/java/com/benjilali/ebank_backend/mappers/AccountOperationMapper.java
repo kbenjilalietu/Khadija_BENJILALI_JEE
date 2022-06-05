@@ -13,6 +13,4 @@ public class AccountOperationMapper {
         BeanUtils.copyProperties( accountOperation, accountOperationDTO);
         return  accountOperationDTO;
     }
-
-
 }

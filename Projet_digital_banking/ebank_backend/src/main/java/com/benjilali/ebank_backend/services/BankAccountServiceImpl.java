@@ -25,12 +25,9 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-@Service
-@Transactional
-@AllArgsConstructor
+@Service @Transactional @AllArgsConstructor
 @Slf4j // equals adding this line :     private Logger log = LoggerFactory.getLogger(this.getClass());
 public class BankAccountServiceImpl implements BankAccountService {
-
     private CustomerRepository customerRepository;
     private BankAccountRepository accountRepository;
     private AccountOperationRepository operationRepository;
@@ -38,7 +35,8 @@ public class BankAccountServiceImpl implements BankAccountService {
     private CustomerMapper customerMapper;
 
     @Override
-    public CurrentBankAccountDTO saveCurrentBankAccount(double initialBalance, double overDraft, String customerId) throws CustomerNotFoundException {
+    public CurrentBankAccountDTO saveCurrentBankAccount(double initialBalance, double overDraft, String customerId)
+            throws CustomerNotFoundException {
         log.info("⌛ Checking if customer exists... ");
         Customer customer = customerRepository.findById(customerId).orElse(null);
         if (customer == null)

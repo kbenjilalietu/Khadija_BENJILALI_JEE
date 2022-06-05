@@ -12,13 +12,8 @@ import java.util.List;
 
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, String> {
-
     @Query(" SELECT C FROM Customer C WHERE C.name LIKE :kw")
     List<Customer> searchCustomerByName(@Param("kw") String keyword);
-
     @Query(" SELECT C FROM Customer C WHERE C.name LIKE :kw")
     Page<Customer> searchCustomerByNamePaginated(@Param("kw") String keyword, Pageable pageable);
-
-
-
 }

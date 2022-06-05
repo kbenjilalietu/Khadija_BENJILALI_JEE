@@ -18,3 +18,23 @@ public class AccountOperationDTO {
     private OperationType type;
     private String description;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
