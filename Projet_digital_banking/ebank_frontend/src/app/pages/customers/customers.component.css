@@ -1,0 +1,60 @@
+@import url(//fonts.googleapis.com/css?family=Lato:300:400);
+
+@use "@material/dialog"
+@include dialog.core-styles
+
+.mycard {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.mySearchField .form-inline label {
+  color: #ccc;
+}
+
+
+.mySearchField .form-inline .search-field {
+  display: inline-block;
+  background: none;
+  border: none;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  color: #ccc;
+  box-shadow: none;
+  color: inherit;
+  transition: 0.3s;
+}
+.search-field{
+  padding: 11px;
+}
+.table{
+  color: black;
+  border: 1px solid darkgray;
+
+}
+h2{
+  font-family: 'Lato', sans-serif;
+  padding-left: 20px;
+}
+
+.mySearchField .form-inline .search-field:focus {
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.cardContainerC{
+  background-color: transparent;
+  margin: 40px 60px;
+  padding: 20px 20px 0 20px;
+}
+
+.page-link{
+   width: 45px;
+   text-align: center;
+}
+select{
+  padding: 10px 80px;
+}

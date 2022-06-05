@@ -1,0 +1,23 @@
+@import url(//fonts.googleapis.com/css?family=Lato:300:400);
+
+.cardLogin{
+  margin: 100px 300px 30px 300px;
+  background: linear-gradient(60deg, #1b75bb 40%, #26a9e0 100%);
+  font-family: 'Lato', sans-serif;
+
+}
+
+label{
+  font-size: 18px;
+  margin-top: 20px;
+}
+input[type="text"], input[type="password"]{
+  padding: 15px;
+}
+.action-button{
+  width: 300px;
+  height: 60px;
+  font-size: 24px;
+  font-weight: bolder;
+  border-width: 2px;
+}
