@@ -22,8 +22,6 @@
 
 ![image](https://user-images.githubusercontent.com/81255636/172180483-61cd0aec-6b10-479b-8a37-ed78b8a080b2.png)
 
-![image](https://user-images.githubusercontent.com/81255636/172180512-dedc3ca7-6d3b-469a-8684-82d87b819be0.png)
-
 5. Account Operations Interfaces
 
 ![image](https://user-images.githubusercontent.com/81255636/172180669-639cda5e-fb0a-4195-8b85-009659f94532.png)
