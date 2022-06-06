@@ -12,7 +12,7 @@
 
 ![image](https://user-images.githubusercontent.com/81255636/172179877-d475a1dc-c075-4e4d-976b-d43e360b262d.png)
 
-![image](https://user-images.githubusercontent.com/81255636/172179744-b855057e-e110-4c75-b1bf-6c041b606c89.png)
+![image](https://user-images.githubusercontent.com/81255636/172181419-57e983c2-dcb8-4e9a-bdea-19eed850c8d1.png)
 
 4. Bank Account Interfaces
 
